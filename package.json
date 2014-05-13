@@ -1,0 +1,31 @@
+{
+  "name": "csv-protobuf-stream",
+  "version": "0.0.0",
+  "description": "csv to protobuf",
+  "main": "index.js",
+  "dependencies": {
+    "binary-csv": "^0.2.0",
+    "protocol-buffers": "^0.2.3",
+    "through2": "^0.4.1"
+  },
+  "devDependencies": {
+    "binary-split": "^0.1.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mafintosh/csv-to-protobuf"
+  },
+  "keywords": [
+    "protobuf",
+    "csv"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/csv-to-protobuf/issues"
+  },
+  "homepage": "https://github.com/mafintosh/csv-to-protobuf"
+}
