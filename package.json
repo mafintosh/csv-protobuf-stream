@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "binary-csv": "^0.2.0",
-    "protocol-buffers": "^0.2.3",
+    "protocol-buffers": "^0.3.0",
     "through2": "^0.4.1"
   },
   "devDependencies": {
