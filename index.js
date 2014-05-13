@@ -13,12 +13,13 @@ var createSchema = function(cells) { // hack for fast array -> protobuf enc
   return protobuf(cells)
 }
 
-module.exports = function(opts, onRow) {
-  if (typeof opts === 'function') return module.exports(null, opts)
+module.exports = function(headers, opts) {
+  if (headers && !Array.isArray(headers)) return module.exports(null, headers);
   if (!opts) opts = {}
+
   var csv = binaryCSV(opts) // pass options object directly to binaryCSV
 
-  var cellSchema = (opts.cells || []).map(function(cell, i) {
+  var cellSchema = (headers || []).map(function(cell, i) {
     return typeof cell === 'string' ? {type:'bytes', name:cell, tag:i} : cell
   })
 
@@ -34,9 +35,12 @@ module.exports = function(opts, onRow) {
       for (var i = 0; i < cells.length; i++) {
         cellSchema.push({type:'bytes', name:cells[i].toString(), tag:i})
       }
+
       schema = createSchema(cellSchema)
+      stream.push(schema.encode(cells))
+
+      return stream.emit('schema', cellSchema, cb) || cb();
     }
-    if (onRow) onRow(cells, cellSchema)
 
     cb(null, schema.encode(cells))
   }
