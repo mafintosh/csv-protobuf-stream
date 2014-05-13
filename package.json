@@ -1,6 +1,6 @@
 {
   "name": "csv-protobuf-stream",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "csv to protobuf",
   "main": "index.js",
   "dependencies": {
