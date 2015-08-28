@@ -2,12 +2,12 @@
 
 Encode csv to protobuf
 
-	npm install csv-to-protobuf
+	npm install csv-protobuf-stream
 
 ## Usage
 
 ``` js
-var csvProtobuf = require('csv-to-protobuf');
+var csvProtobuf = require('csv-protobuf-stream');
 var split = require('binary-split');
 var encoder = csvProtobuf();
 
